@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean, BigInteger
 from sqlalchemy.orm import relationship
 
-from database import Base, engine
+from app.database import Base, engine
 
 
 class User(Base):
@@ -10,6 +10,7 @@ class User(Base):
     id = Column(BigInteger, primary_key=True)
     email = Column(String(100), unique=True, nullable=False)
     username = Column(String(100), unique=True, nullable=False)
+    hashed_password = Column(String)
     phone = Column(String(20), nullable=True)
     first_name = Column(String(100), nullable=True)
     last_name = Column(String(100), nullable=True)

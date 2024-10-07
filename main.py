@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
-from models import init_models
+from app.models import init_models
 import uvicorn
 
 
